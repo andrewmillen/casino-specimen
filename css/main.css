@@ -3,8 +3,7 @@
 @font-face {
     font-family: 'casinoregular';
     src: url('../font/casino-webfont.woff2') format('woff2'),
-         url('../font/casino-webfont.woff') format('woff'),
-         url('../font/casino-webfont.ttf') format('ttf');
+         url('../font/casino-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -18,7 +17,7 @@ html {
     color: #222;
     font-size: 1em;
     line-height: 1.4;
-    font-family: 'casinoregular';
+    font-family: 'casinoregular', sans-serif;
 }
 
 ::-moz-selection {
@@ -41,11 +40,26 @@ html {
     clear: both;
 }
 
+.label {
+  font-family: 'Roboto', sans-serif;
+}
+
+[contenteditable="true"] {
+  padding: 0.125em 0.125em 0;;
+}
+
+[contenteditable="true"]:focus {
+  background: rgba(0,0,0,.05);
+  outline: none;
+}
+
+
+
 header {
   background: #B63426;
   text-align: center;
-  height: 40vw;
-  max-height: 800px;
+  height: 100vh;
+  max-height: 60vw;
   overflow: hidden;
   position: relative;
   display: block;
@@ -87,7 +101,7 @@ h1 {
 }
 
 span.word-1 { font-size: 40px; }
-span.word-2 { font-size: 52px; }
+span.word-2 { font-size: 54px; }
 span.word-3 { font-size: 30px; }
 span.word-4 { font-size: 45px; }
 
@@ -113,6 +127,7 @@ span.ampersand {
     float: left;
     position: relative;
     text-align: center;
+    padding: 5vw;
   }
 
   .words__wrapper {
@@ -121,10 +136,10 @@ span.ampersand {
     transform: translateY(-50%);
   }
 
-  span.word-1 { font-size: 50px; }
-  span.word-2 { font-size: 64px; }
-  span.word-3 { font-size: 38px; }
-  span.word-4 { font-size: 58px; }
+  span.word-1 { font-size: 60px; }
+  span.word-2 { font-size: 80px; }
+  span.word-3 { font-size: 47px; }
+  span.word-4 { font-size: 70px; }
 
   span.ampersand {
     font-size: 300px;
@@ -136,7 +151,7 @@ span.ampersand {
 }
 
 .section--three {
-  background: #035B4E;
+  background: #0C352F;
   padding: 15vw;
   text-align: center;
   color: white;
@@ -145,28 +160,50 @@ span.ampersand {
 .try-me {
   width: 100%;
   max-width: 1000px;
-  font-size: 30px;
+  font-size: 40px;
   margin: 0 auto;
   transition: all .3s;
 }
 
 @media screen and (min-width: 768px) {
   .try-me {
-    font-size: 40px;
+    font-size: 100px;
   }
 }
 
-.try-me .editable {
-  outline: none;
+.bubble {
+  background: #22786C;
+  position: relative;
+  border-radius: 10px;
+  padding: 1.4rem;
+  font-size: 20px;
+  margin-left: 10px;
+  top: -10px;
 }
 
-.try-me:focus,
-.try-me:hover {
-  color: white;
+@media screen and (min-width: 768px) {
+  .bubble {
+    font-size: 60px;
+  }
 }
 
-.try-me span:focus {
-  color: white;
+
+
+.bubble:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -20px;
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 20px solid #22786C;
+}
+
+.bubble:focus {
+  background: #22786C;
 }
 
 .section--four {
