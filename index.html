@@ -11,28 +11,33 @@
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
-        <!-- Add your site or application content here -->
+
         <header>
           <img src="img/suits.svg" alt="suits">
-          <h1><span contenteditable="true" spellcheck="false">Casino</span></h1>
+          <h1 id="variable-size"><span contenteditable="true" spellcheck="false">Casino</span></h1>
+
+          <div class="slider cf">
+            <span class="label label-small">Bet Small</span>
+            <input type="range" min="50" max="200">
+            <span class="label label-big">Bet Big</span>
+          </div>
         </header>
 
         <main>
 
-
-          <section class="cf section--four">
+          <section class="cf section--characters">
             <div class="alphabet">
               <span contenteditable="true" spellcheck="false">ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
             </div>
           </section>
 
-          <section class="cf section--two">
+          <section class="cf section--words">
             <div class="words">
-              <div class="words__wrapper">
-                <span class="word word-1" class="editable" contenteditable="true" spellcheck="false">Tangle</span>
-                <span class="word word-2" class="editable" contenteditable="true" spellcheck="false">Quick</span>
-                <span class="word word-3" class="editable" contenteditable="true" spellcheck="false">Joyfully</span>
-                <span class="word word-4" class="editable" contenteditable="true" spellcheck="false">Zebra</span>
+              <div class="words__wrapper" contenteditable="true" spellcheck="false">
+                <span class="word word-1">Tangle</span>
+                <span class="word word-2">Quick</span>
+                <span class="word word-3">Joyfully</span>
+                <span class="word word-4">Zebra</span>
               </div>
             </div>
             <div class="amp">
@@ -40,10 +45,10 @@
             </div>
           </section>
 
-          <section class="cf section--three">
-              <div class="try-me">
-                  <span contenteditable="true" spellcheck="false">(-_-')</span>
-                  <span contenteditable="true" spellcheck="false" class="bubble">]?!$#<;\</span>
+          <section class="cf section--emoticon">
+              <div class="emoticon" contenteditable="true" spellcheck="false">
+                  <span>(-_-')</span>
+                  <span class="bubble">!#?$<</span>
               </div>
           </section>
 
@@ -51,12 +56,12 @@
             <div class="equation">
               <div class="equation__wrapper">
                 <div class="cf">
-                  <input type="text" id="num1" placeholder="3" value="3">
+                  <input type="text" id="num1" placeholder="3" value="41">
                 </div>
                 <div class="cf plus">
-                <input type="text" id="num2" placeholder="7" value="7" onkeyup="add_two_number();">
+                <input type="text" id="num2" placeholder="7" value="57" onkeyup="add_two_number();">
                 </div>
-                <div id="solution">10</div>
+                <div id="solution">98</div>
               </div>
             </div>
             <div class="numerals">
@@ -69,7 +74,8 @@
           </section>
 
           <section class="cf section--quote">
-            <p contenteditable="true" spellcheck="false">Victory is a fleeting thing in the gambling business. Today's winners are tomorrow's blinking toads, dumb beasts with no hope.</p>
+            <p contenteditable="true" spellcheck="false" class="quote">Victory is a fleeting thing in the gambling business. Today's winners are tomorrow's blinking toads, dumb beasts with no hope.</p>
+            <span class="cite">– Hunter S. Thompson</span>
           </section>
 
         </main>
@@ -88,8 +94,16 @@
         </script>
 
         <script>
+          jQuery('.slider input').on('input', function () {
+              var v = jQuery(this).val();
+              jQuery('#variable-size').css('font-size', v + 'px')
+          });
+        </script>
+
+        <script>
           jQuery("h1").fitText();
           jQuery(".alphabet").fitText(2);
+          jQuery(".quote").fitText(2);
         </script>
 
     </body>
