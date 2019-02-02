@@ -4,7 +4,6 @@
          url('../font/casino-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 *,
@@ -182,6 +181,50 @@ input[type=range]::-ms-fill-upper {
   background: #ffffff;
   border-bottom: 1px solid #C5452B;
   border-radius: 2.6px;
+}
+
+/* =========================== */
+/* Download Button */
+/* =========================== */
+
+.download {
+  background: #1F1F21;
+  border-radius: 4px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.1);
+  padding: 1em 1.5em;
+  color: #ffffff;
+  font-family: 'Montserrat';
+  position: fixed;
+  top: 1rem;
+  right: -20rem;
+  text-decoration: none;
+  z-index: 999;
+  animation-name: slideIn;
+  animation-duration: 0.5s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(.3,.64,.48,1.2);
+}
+
+@keyframes slideIn {
+  0% { right: -20rem; }
+  100% { right: 1rem; }
+}
+
+.download i {
+  font-size: 14px;
+  padding-left: 4px;
+}
+
+.download span {
+    color: #8AB2F1;
+    font-size: 10px;
+    background: #28354C;
+    border-radius: 2px;
+    padding: 0.5em;
+    position: relative;
+    top: -3px;
+    margin-left: 1rem;
 }
 
 /* =========================== */
